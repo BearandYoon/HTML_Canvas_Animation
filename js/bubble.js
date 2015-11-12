@@ -1,5 +1,13 @@
-var canvas_div1, canvas1, stage1, container1, bUpdate1 = false;
+var canvas_div1, canvas1, stage1, container1, bUpdate1 = true;
 var canvas_div2, canvas2, stage2, container2, bUpdate2 = false;
+var deltaX = Math.random();
+var deltaY = Math.random();
+var deltaZ = Math.random();
+
+function handleMouseWheel() {
+    bUpdate1 = true;
+    bUpdate2 = true;
+}
 
 function initcanvas1() {
     canvas_div1 = document.getElementById('home-mainbanner clearfix');
@@ -29,16 +37,16 @@ function onImageLoad1(event) {
         bitmap = new createjs.Bitmap(image);
         container1.addChild(bitmap);
         var flag;
-       flag = Math.round(Math.random());//output is 0 or 1
-       if(flag) {
-           bitmap.x = -120;
+        flag = Math.round(Math.random());//output is 0 or 1
+        if(flag) {
+           bitmap.x = canvas1.width + Math.random();
            bitmap.y = canvas1.height * Math.random();
-       }
-       else {
+        }
+        else {
            bitmap.x = canvas1.width * Math.random();
-           bitmap.y = -120;
-       }
-       bitmap.rotation = 360 * Math.random() | 0;
+           bitmap.y = canvas1.height * Math.random();
+        }
+        bitmap.rotation = 360 * Math.random() | 0;
         bitmap.regX = bitmap.image.width / 2 | 0;
         bitmap.regY = bitmap.image.height / 2 | 0;
         bitmap.scaleX = bitmap.scaleY = bitmap.scale = Math.random() * 0.8 + 0.6;
@@ -47,43 +55,55 @@ function onImageLoad1(event) {
    createjs.Ticker.addEventListener("tick", tick1);
    createjs.Ticker.setFPS(20);
 }
-
+//mousevouer event
 function handleMouseOver1(event) {
    bUpdate1 = true;
 }
-
+//mouseout event
 function handleMouseOut1(event) {
    bUpdate1 = false;
+}
+//mousemove event
+function handleMouseMove1(event) {
+    bUpdate1 = true;
 }
 
 function tick1(event) {
    // this set makes it so the stage only re-renders when an event handler indicates a change has happened.
-    if(bUpdate1) {
-        container1.updateCache();
-        // if you omit the compositeOperation param in updateCache, it will clear the existing cache, and draw into it:
-        // in this demo, that has the effect of showing just the star that was drawn each tick.
-        // shape.updateCache();
-//       container.clearRect(0,0,canvas.width, canvas.height);
-        // because the vector star has already been drawn to the cache, we can clear it right away:
-//       container.graphics.clear();
-        var count = container1.getNumChildren();
+    container1.updateCache();
+    var count = container1.getNumChildren();
 
         // iterate through all the children and move them according to their velocity:
-        for (var i = 0; i < count; i++) {
-            var bubble = container1.getChildAt(i);
-            if(bubble.x > 0)
-                bubble.x = (canvas1.width + (bubble.x + Math.random() * 2)) % canvas1.width;
-            else
-                bubble.x = bubble.x + Math.random() * 2;
-            if(bubble.y > 0)
-                bubble.y = (canvas1.height + (bubble.y + Math.random() * 2)) % canvas1.height;
-            else
-                bubble.y = bubble.y + Math.random() * 2;
-            bubble.rotation = bubble.rotation + Math.random() * 2;
+    for (var i = 0; i < count; i++) {
+
+        if (bUpdate1) {//mouse scroll case
+            deltaX = Math.random() * 2;
+            deltaY = Math.random() * 2;
+            deltaZ = Math.random() * 2;
+        }
+        else {//mouse stop case
+            deltaX = deltaX - Math.random() * 0.0046;
+            deltaY = deltaY - Math.random() * 0.0054;
+            deltaZ = Math.random();
         }
 
-        stage1.update(event);
+        if (deltaX < 0 || deltaY < 0)
+            return;
+
+        var bubble = container1.getChildAt(i);
+        if(bubble.x > 0)
+            bubble.x = (canvas1.width + (bubble.x  + deltaX * 2)) % canvas1.width;
+        else
+            bubble.x = bubble.x + deltaX * 2;
+        if(bubble.y > 0)
+            bubble.y = (canvas1.height + (bubble.y  + deltaY * 2)) % canvas1.height;
+        else
+            bubble.y = bubble.y + deltaY * 2;
+        bubble.rotation = bubble.rotation + deltaZ;
     }
+
+    stage1.update(event);
+    bUpdate1 = false;
 }
 
 
@@ -117,12 +137,12 @@ function onImageLoad2(event) {
         var flag;
         flag = Math.round(Math.random());//output is 0 or 1
         if(flag) {
-            bitmap.x = -120;
-            bitmap.y = canvas1.height * Math.random();
+            bitmap.x = canvas2.width * Math.random();
+            bitmap.y = canvas2.height * Math.random();
         }
         else {
-            bitmap.x = canvas1.width * Math.random();
-            bitmap.y = -120;
+            bitmap.x = canvas2.width * Math.random();
+            bitmap.y = canvas2.height * Math.random();
         }
         bitmap.rotation = 360 * Math.random() | 0;
         bitmap.regX = bitmap.image.width / 2 | 0;
@@ -142,32 +162,44 @@ function handleMouseOut2(event) {
     bUpdate2 = false;
 }
 
+function handleMouseMove2(event) {
+    bUpdate2 = true;
+}
+
 function tick2(event) {
     // this set makes it so the stage only re-renders when an event handler indicates a change has happened.
-    if(bUpdate2) {
-        container2.updateCache();
-        // if you omit the compositeOperation param in updateCache, it will clear the existing cache, and draw into it:
-        // in this demo, that has the effect of showing just the star that was drawn each tick.
-        // shape.updateCache();
-//       container.clearRect(0,0,canvas.width, canvas.height);
-        // because the vector star has already been drawn to the cache, we can clear it right away:
-//       container.graphics.clear();
-        var count = container2.getNumChildren();
+    container2.updateCache();
+    var count = container2.getNumChildren();
 
         // iterate through all the children and move them according to their velocity:
-        for (var i = 0; i < count; i++) {
-            var bubble = container2.getChildAt(i);
-            if(bubble.x > 0)
-                bubble.x = (canvas1.width + (bubble.x + Math.random() * 2)) % canvas1.width;
-            else
-                bubble.x = bubble.x + Math.random() * 2;
-            if(bubble.y > 0)
-                bubble.y = (canvas1.height + (bubble.y + Math.random() * 2)) % canvas1.height;
-            else
-                bubble.y = bubble.y + Math.random() * 2;
-            bubble.rotation = bubble.rotation + Math.random() * 2;
+    for (var i = 0; i < count; i++) {
+
+        if (bUpdate2) {
+            deltaX = Math.random() * 2;
+            deltaY = Math.random() * 2;
+            deltaZ = Math.random();
+        }
+        else {
+            deltaX = deltaX - Math.random() * 0.0046;
+            deltaY = deltaY - Math.random() * 0.0056;
+            deltaZ = deltaZ + 0.0023;
         }
 
-        stage2.update(event);
+        if (deltaX < 0 || deltaY < 0)
+            return;
+
+        var bubble = container2.getChildAt(i);
+        if(bubble.x > 0)
+            bubble.x = (canvas2.width + (bubble.x  + deltaX)) % canvas2.width;
+        else
+            bubble.x = bubble.x + deltaX;
+        if(bubble.y > 0)
+            bubble.y = (canvas2.height + (bubble.y  + deltaY)) % canvas2.height;
+        else
+            bubble.y = bubble.y + deltaY;
+        bubble.rotation = bubble.rotation + deltaZ;
     }
+
+    stage2.update(event);
+    bUpdate2 = false;
 }

@@ -26,6 +26,7 @@
             } else {
                 $('#top').fadeOut();
             }
+            handleMouseWheel();
         });
 
         $('#top').click(function() {
@@ -35,7 +36,7 @@
 </script>
 </head>
 
-<body dir="rtl" class="home-page" id="home-page">
+<body dir="rtl" class="home-page" id="home-page" onwheel="handleMouseWheel()">
 <div class="header">
 	<div class="top-header clearfix">
 		<div class="container">
@@ -70,13 +71,10 @@
     </div>
 </div>
 
-<div id="home-mainbanner clearfix" class="home-mainbanner clearfix">
+<div id="home-mainbanner clearfix" class="home-mainbanner clearfix" onwheel="handleMouseWheel()">
     <!--Added by Denis-->
-    <canvas id="first_canvas"
-            onmouseover="handleMouseOver1(event)"
-            onmouseout="handleMouseOut1()"
-    ></canvas>
-	<div class="container" id="bubble_container1" onmouseenter="handleMouseOver1(event)">
+    <canvas id="first_canvas"></canvas>
+	<div class="container" id="bubble_container1">
         <div class="homebaner-form">
             <h2>DIGITAL TELENT AGENCY</h2>
             <div class="homebaner-formbox clearfix">
@@ -162,13 +160,11 @@
     </div>
 </div>
 
-<div class="homebot-footerbg clearfix" id="homebot-footerbg clearfix">
+<div class="homebot-footerbg clearfix" id="homebot-footerbg clearfix" onwheel="handleMouseWheel()">
     <!--Added by Denis-->
-    <canvas id="second_canvas"
-            onmouseover="handleMouseOver2(event)"
-            onmouseout="handleMouseOut2()"
-            ></canvas>
-    <div class="container" id="bubble_container2" onmouseenter="handleMouseOver2(event)">
+    <canvas id="second_canvas"></canvas>
+    <!--Added by Denis-->
+    <div class="container" id="bubble_container2">
         <div class="homebot-footerbg-slider">
             <h2>לעלעלעלעלע</h2>
             <ul class="slider">
@@ -216,9 +212,7 @@
                         <p>nvbjknbjnbjkncbkj<br />
                         cnbdjgiojigmlcmdkofgjolfdl,<br />
                         fgokdl,gm,klbjius.,;lsc,kodf</p>
-
                         <div class="image"><img src="images/like_img1.jpg"  alt="" /></div>\
-
                         <div class="like_btton">
                             <a href="" class="like">share <img src="images/share-icon.png" /></a>
                             <a href="" class="like">comment <img src="images/comment-icon.png" /></a>
@@ -236,7 +230,6 @@
                         fgokdl,gm,klbjius.,;lsc,kodf</p>
 
                         <div class="image"><img src="images/like_img2.jpg"  alt="" /></div>
-
                         <div class="like_btton">
                             <a href="" class="like">share <img src="images/share-icon.png" /></a>
                             <a href="" class="like">comment <img src="images/comment-icon.png" /></a>
@@ -255,7 +248,6 @@
                         fgokdl,gm,klbjius.,;lsc,kodf</p>
 
                         <div class="image"><img src="images/like_img3.jpg"  alt="" /></div>
-
                         <div class="like_btton">
                             <a href="" class="like">share <img src="images/share-icon.png" /></a>
                             <a href="" class="like">comment <img src="images/comment-icon.png" /></a>
