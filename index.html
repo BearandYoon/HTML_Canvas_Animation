@@ -10,26 +10,32 @@
 <link rel="stylesheet" href="css/bootstrap.css" />
 <link rel="stylesheet" href="css/custom.css" />
 <link rel="stylesheet" href="css/owl.carousel.css" />
+
+<script src="https://code.createjs.com/createjs-2015.05.21.min.js"></script>
+    <!-- Added by Denis -->
+    <script src="js/TweenLite.min.js"></script>
+    <script src="js/EasePack.min.js"></script>
+    <script src="js/rAF.js"></script>
+    <script src="js/bubble.js"></script>
+    <!-- End -->
 <script type="text/javascript">
-$(function() {
-$(window).scroll(function() {
-if($(this).scrollTop() != 0) {
-$('#top').fadeIn();
-} else {
-$('#top').fadeOut();
-}
-});
- 
-$('#top').click(function() {
-$('body,html').animate({scrollTop:0},500);
-});
-});
+    $(function() {
+        $(window).scroll(function() {
+            if($(this).scrollTop() != 0) {
+                $('#top').fadeIn();
+            } else {
+                $('#top').fadeOut();
+            }
+        });
+
+        $('#top').click(function() {
+            $('body,html').animate({scrollTop:0},500);
+        });
+    });
 </script>
- 
 </head>
-<body dir="rtl" class="home-page">
 
-
+<body dir="rtl" class="home-page" id="home-page">
 <div class="header">
 	<div class="top-header clearfix">
 		<div class="container">
@@ -43,334 +49,280 @@ $('body,html').animate({scrollTop:0},500);
 			<div class="logo"><A href="#"><img src="images/logo.png" alt="" title="" /></A></div>
 			       
             <div class="navbar yamm navbar-default">
-  <div>
-    <div class="navbar-header">
-      <button type="button" data-toggle="collapse" data-target="#navbar-collapse-1" class="navbar-toggle"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
-    </div>
-    <div id="navbar-collapse-1" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav">
-        <li><A href="#">Lorem Ipsum</A></li>
-                <li><A href="#">including versions</A></li>
-                <li><A href="#">Ipsum</A></li>
-                <li><A href="#">Digital CV</A></li>
-                <li><A href="#">passages</A></li>
-                <li><A href="#">repetition</A></li>
-                <li><A href="#">characteristic </A></li>
-      </ul>
-    </div>
-  </div>
-</div>
-		</div>
-	</div>
-</div>
-
-
-
-<div class="home-mainbanner clearfix">
-	<div class="container">
-    <div class="homebaner-form">
-    <h2>DIGITAL TELENT AGENCY</h2>
-       	  <div class="homebaner-formbox clearfix">
-           	<ul>
-            	<li>
-                	<select>
-                    	<option>תחום</option>
-                    	<option>תחום</option>
-                    </select>
-                </li>
-                <li>
-                	<select>
-                    	<option>תחום</option>
-                    	<option>תחום</option>
-                    </select>
-                </li>
-                
-                
-                <li><button type="button">לעבודה</button></li>
-              </ul>
-              
+                <div>
+                    <div class="navbar-header">
+                        <button type="button" data-toggle="collapse" data-target="#navbar-collapse-1" class="navbar-toggle"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+                    </div>
+                    <div id="navbar-collapse-1" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                                <li><A href="#">Lorem Ipsum</A></li>
+                                <li><A href="#">including versions</A></li>
+                                <li><A href="#">Ipsum</A></li>
+                                <li><A href="#">Digital CV</A></li>
+                                <li><A href="#">passages</A></li>
+                                <li><A href="#">repetition</A></li>
+                                <li><A href="#">characteristic </A></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
-    
-    
     </div>
-    <div class="knowldge-banner">
-    
+</div>
+
+<div id="home-mainbanner clearfix" class="home-mainbanner clearfix">
+    <!--Added by Denis-->
+    <canvas id="first_canvas"
+            onmouseover="handleMouseOver1(event)"
+            onmouseout="handleMouseOut1()"
+    ></canvas>
+	<div class="container" id="bubble_container1" onmouseenter="handleMouseOver1(event)">
+        <div class="homebaner-form">
+            <h2>DIGITAL TELENT AGENCY</h2>
+            <div class="homebaner-formbox clearfix">
+                <ul>
+                    <li>
+                        <select>
+                            <option>תחום</option>
+                            <option>תחום</option>
+                        </select>
+                    </li>
+                    <li>
+                        <select>
+                            <option>תחום</option>
+                            <option>תחום</option>
+                        </select>
+                    </li>
+                    <li><button type="button">לעבודה</button></li>
+                  </ul>
+            </div>
+        </div>
+
+        <div class="knowldge-banner">
+        </div>
     </div>
-   </div>
+</div>
    
-   <div class="main_content clearfix">
-   <div class="container">
-   <div class="row">
-   
-   <div class="main_content">
-   <h2 class="text-center">לעבודה לעבודה
-   <p>cv;xljgbiofjmbhiobmko<br />vcmjf9rjgokfdovmcviobmvobmofgji</p></h2>
-   
-  <ul class="clearfix">
-  <li class="col-sm-4">
-  <div class="content">
-<p>JG11035310</p>
-<img src="images/main_content_img.jpg" alt="" />
-<div class="campain">CAIMPAIN MANAGER</div>
-   </div>
-  </li>
-  
-  <li class="col-sm-4">
-  <div class="content">
-<p>JB203111230</p>
-<img src="images/main_content_img2.jpg" alt="" />
-<div class="campain">Product Manager</div>
-   </div>
-  </li>
-  
-  <li class="col-sm-4">
-  <div class="content">
-<p>JB203111230</p>
-<img src="images/main_content_img3.jpg"  alt="" />
-<div class="campain">Performance Manager</div>
-   </div>
-  </li>
-  
-  <li class="col-sm-4">
-  <div class="content">
-<p>JB170421730</p>
-<img src="images/main_content_img4.jpg"  alt="" />
-<div class="campain">UX Designer</div>
-   </div>
-  </li>
-  
-  <li class="col-sm-4">
-  <div class="content">
-<p>JB180200410</p>
-<img src="images/main_content_img5.jpg" alt="" />
-<div class="campain">Data Analyst</div>
-   </div>
-  </li>
-  
-  <li class="col-sm-4">
-  <div class="content">
-<p>JB290010310</p>
-<img src="images/main_content_img6.jpg" alt="" />
-<div class="campain">Online Marketing Manager</div>
-   </div>
-  </li>
-  </ul>
-  
-  
-  
-  
-  
-  
-  
-  
-  <div class="more-btntext">
-    <a href="" class="bttune more-btn">לעבודה</a>
-  </div>
-  
-  
-  
-  
-  
-  
-  </div> 
-   
-   
- 
-   
-   
-   
-   </div>
-   
-   </div>
-   </div>
-  
-   
-   
-    
-   
-   
-   
-   
-   
-   <div class="homebot-footerbg clearfix">
-   
-   <div class="container">
-   <div class="homebot-footerbg-slider">
-   <h2>לעלעלעלעלע</h2>
-   
-   <ul class="slider">
-   
-   
-   <li><p>1be the best position FOR ME and doing so with professionalism, courtesy, and a lot of patienc be the best position FOR ME and doing so with professionalism, courtesy, and a lot of patienc be the best position FOR ME and doing so with professionalism, courtesy, and a lot of patienc</p>
-   <h3>Seffy Kotz
-   <span>Demand Generation Manager</span></h3>
-</li>
+<div class="main_content clearfix">
+    <div class="container">
+        <div class="row">
+            <div class="main_content">
+                <h2 class="text-center">לעבודה לעבודה
+                <p>cv;xljgbiofjmbhiobmko<br />vcmjf9rjgokfdovmcviobmvobmofgji</p></h2>
 
-<li><p>2be the best position FOR ME and doing so with professionalism, courtesy, and a lot of patienc be the best position FOR ME and doing so with professionalism, courtesy, and a lot of patienc be the best position FOR ME and doing so with professionalism, courtesy, and a lot of patienc</p>
-   <h3>Seffy Kotz
-   <span>Demand Generation Manager</span></h3>
-</li>
+                <ul class="clearfix">
+                    <li class="col-sm-4">
+                        <div class="content">
+                            <p>JG11035310</p>
+                            <img src="images/main_content_img.jpg" alt="" />
+                            <div class="campain">CAIMPAIN MANAGER</div>
+                        </div>
+                    </li>
+                    <li class="col-sm-4">
+                        <div class="content">
+                            <p>JB203111230</p>
+                            <img src="images/main_content_img2.jpg" alt="" />
+                            <div class="campain">Product Manager</div>
+                        </div>
+                    </li>
+                    <li class="col-sm-4">
+                        <div class="content">
+                            <p>JB203111230</p>
+                            <img src="images/main_content_img3.jpg"  alt="" />
+                            <div class="campain">Performance Manager</div>
+                        </div>
+                    </li>
+                    <li class="col-sm-4">
+                        <div class="content">
+                            <p>JB170421730</p>
+                            <img src="images/main_content_img4.jpg"  alt="" />
+                            <div class="campain">UX Designer</div>
+                        </div>
+                    </li>
+                    <li class="col-sm-4">
+                        <div class="content">
+                            <p>JB180200410</p>
+                            <img src="images/main_content_img5.jpg" alt="" />
+                            <div class="campain">Data Analyst</div>
+                        </div>
+                    </li>
+                    <li class="col-sm-4">
+                        <div class="content">
+                            <p>JB290010310</p>
+                            <img src="images/main_content_img6.jpg" alt="" />
+                            <div class="campain">Online Marketing Manager</div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="more-btntext">
+                    <a href="" class="bttune more-btn">לעבודה</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-<li><p>3be the best position FOR ME and doing so with professionalism, courtesy, and a lot of patienc be the best position FOR ME and doing so with professionalism, courtesy, and a lot of patienc be the best position FOR ME and doing so with professionalism, courtesy, and a lot of patienc</p>
-   <h3>Seffy Kotz
-   <span>Demand Generation Manager</span></h3>
-</li>
+<div class="homebot-footerbg clearfix" id="homebot-footerbg clearfix">
+    <!--Added by Denis-->
+    <canvas id="second_canvas"
+            onmouseover="handleMouseOver2(event)"
+            onmouseout="handleMouseOut2()"
+            ></canvas>
+    <div class="container" id="bubble_container2" onmouseenter="handleMouseOver2(event)">
+        <div class="homebot-footerbg-slider">
+            <h2>לעלעלעלעלע</h2>
+            <ul class="slider">
+                <li><p>1be the best position FOR ME and doing so with professionalism, courtesy, and a lot of patienc be the best position FOR ME and doing so with professionalism, courtesy, and a lot of patienc be the best position FOR ME and doing so with professionalism, courtesy, and a lot of patienc</p>
+                    <h3>Seffy Kotz
+                    <span>Demand Generation Manager</span></h3>
+                </li>
 
-<li><p>4be the best position FOR ME and doing so with professionalism, courtesy, and a lot of patienc be the best position FOR ME and doing so with professionalism, courtesy, and a lot of patienc be the best position FOR ME and doing so with professionalism, courtesy, and a lot of patienc</p>
-   <h3>Seffy Kotz
-   <span>Demand Generation Manager</span></h3>
-</li>
+                <li><p>2be the best position FOR ME and doing so with professionalism, courtesy, and a lot of patienc be the best position FOR ME and doing so with professionalism, courtesy, and a lot of patienc be the best position FOR ME and doing so with professionalism, courtesy, and a lot of patienc</p>
+                    <h3>Seffy Kotz
+                    <span>Demand Generation Manager</span></h3>
+                </li>
 
-<li><p>5be the best position FOR ME and doing so with professionalism, courtesy, and a lot of patienc be the best position FOR ME and doing so with professionalism, courtesy, and a lot of patienc be the best position FOR ME and doing so with professionalism, courtesy, and a lot of patienc</p>
-   <h3>Seffy Kotz
-   <span>Demand Generation Manager</span></h3>
-</li>
+                <li><p>3be the best position FOR ME and doing so with professionalism, courtesy, and a lot of patienc be the best position FOR ME and doing so with professionalism, courtesy, and a lot of patienc be the best position FOR ME and doing so with professionalism, courtesy, and a lot of patienc</p>
+                    <h3>Seffy Kotz
+                    <span>Demand Generation Manager</span></h3>
+                </li>
 
-   </ul>
-   
-   
-   </div>
-   
-   </div>
-   
-   </div>
-   
+                <li><p>4be the best position FOR ME and doing so with professionalism, courtesy, and a lot of patienc be the best position FOR ME and doing so with professionalism, courtesy, and a lot of patienc be the best position FOR ME and doing so with professionalism, courtesy, and a lot of patienc</p>
+                    <h3>Seffy Kotz
+                    <span>Demand Generation Manager</span></h3>
+                </li>
+
+                <li><p>5be the best position FOR ME and doing so with professionalism, courtesy, and a lot of patienc be the best position FOR ME and doing so with professionalism, courtesy, and a lot of patienc be the best position FOR ME and doing so with professionalism, courtesy, and a lot of patienc</p>
+                    <h3>Seffy Kotz
+                    <span>Demand Generation Manager</span></h3>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
 <div class="home-bottom2 clearfix">
-<div class="container">
+    <div class="container">
+        <div class="row">
+            <div class="top-content-sec">
+                <h2>לעבודה לעבודה לעבודה</h2>
+                <p>לעבודה</p>
+            </div>
 
-<div class="row">
+            <ul class="clearfix">
+                <li class="col-sm-4">
+                    <div class="cover-con">
+                        <h3>vfnbjgniuvbuini</h3>
+                        <p>nvbjknbjnbjkncbkj<br />
+                        cnbdjgiojigmlcmdkofgjolfdl,<br />
+                        fgokdl,gm,klbjius.,;lsc,kodf</p>
 
-<div class="top-content-sec">
-	<h2>לעבודה לעבודה לעבודה</h2>
-	<p>לעבודה</p>
+                        <div class="image"><img src="images/like_img1.jpg"  alt="" /></div>\
+
+                        <div class="like_btton">
+                            <a href="" class="like">share <img src="images/share-icon.png" /></a>
+                            <a href="" class="like">comment <img src="images/comment-icon.png" /></a>
+                            <a href="" class="like">Like <img src="images/like-icon.png" /></a>
+                        </div>
+                    </div>
+                    <div class="blank-div"></div>
+                </li>
+
+                <li class="col-sm-4">
+                    <div class="cover-con">
+                        <h3>vfnbjgniuvbuini</h3>
+                        <p>nvbjknbjnbjkncbkj<br />
+                        cnbdjgiojigmlcmdkofgjolfdl,<br />
+                        fgokdl,gm,klbjius.,;lsc,kodf</p>
+
+                        <div class="image"><img src="images/like_img2.jpg"  alt="" /></div>
+
+                        <div class="like_btton">
+                            <a href="" class="like">share <img src="images/share-icon.png" /></a>
+                            <a href="" class="like">comment <img src="images/comment-icon.png" /></a>
+                            <a href="" class="like">Like <img src="images/like-icon.png" /></a>
+                        </div>
+                    </div>
+
+                    <div class="blank-div"></div>
+                </li>
+
+                <li class="col-sm-4">
+                    <div class="cover-con">
+                        <h3>vfnbjgniuvbuini</h3>
+                        <p>nvbjknbjnbjkncbkj<br />
+                        cnbdjgiojigmlcmdkofgjolfdl,<br />
+                        fgokdl,gm,klbjius.,;lsc,kodf</p>
+
+                        <div class="image"><img src="images/like_img3.jpg"  alt="" /></div>
+
+                        <div class="like_btton">
+                            <a href="" class="like">share <img src="images/share-icon.png" /></a>
+                            <a href="" class="like">comment <img src="images/comment-icon.png" /></a>
+                            <a href="" class="like">Like <img src="images/like-icon.png" /></a>
+                        </div>
+                    </div>
+                    <div class="blank-div"></div>
+                </li>
+            </ul>
+        </div>
+    </div>
 </div>
-<ul class="clearfix">
-<li class="col-sm-4">
-<div class="cover-con">
-<h3>vfnbjgniuvbuini</h3>
-<p>nvbjknbjnbjkncbkj<br />
-cnbdjgiojigmlcmdkofgjolfdl,<br />
-fgokdl,gm,klbjius.,;lsc,kodf</p>
-<div class="image"><img src="images/like_img1.jpg"  alt="" /></div>
-<div class="like_btton">
-<a href="" class="like">share <img src="images/share-icon.png" /></a>
-<a href="" class="like">comment <img src="images/comment-icon.png" /></a>
-<a href="" class="like">Like <img src="images/like-icon.png" /></a>
-</div>
-</div>
-<div class="blank-div"></div>
-</li>
-
-<li class="col-sm-4">
-<div class="cover-con">
-<h3>vfnbjgniuvbuini</h3>
-<p>nvbjknbjnbjkncbkj<br />
-cnbdjgiojigmlcmdkofgjolfdl,<br />
-fgokdl,gm,klbjius.,;lsc,kodf</p>
-<div class="image"><img src="images/like_img2.jpg"  alt="" /></div>
-<div class="like_btton">
-<a href="" class="like">share <img src="images/share-icon.png" /></a>
-<a href="" class="like">comment <img src="images/comment-icon.png" /></a>
-<a href="" class="like">Like <img src="images/like-icon.png" /></a>
-</div>
-</div>
-<div class="blank-div"></div>
-</li>
-
-<li class="col-sm-4">
-<div class="cover-con">
-<h3>vfnbjgniuvbuini</h3>
-<p>nvbjknbjnbjkncbkj<br />
-cnbdjgiojigmlcmdkofgjolfdl,<br />
-fgokdl,gm,klbjius.,;lsc,kodf</p>
-<div class="image"><img src="images/like_img3.jpg"  alt="" /></div>
-<div class="like_btton">
-<a href="" class="like">share <img src="images/share-icon.png" /></a>
-<a href="" class="like">comment <img src="images/comment-icon.png" /></a>
-<a href="" class="like">Like <img src="images/like-icon.png" /></a>
-</div>
-</div>
-<div class="blank-div"></div>
-</li>
-
-    
-
-
-</ul>
-
-</div>
-</div>
-</div>
-
-
-
-   	
-   </div>
-    
-    
-
-
-
-
 
 <div class="footer clearfix">
+    <div class="footer-top clearfix">
+        <div class="container clearfix footer-content">
+            <img src="images/footer-img.png" class="footer-img" />
 
-<div class="footer-top clearfix">
+            <div class="social">
+                <p>Social Link</p>
+                <a href="#"><img src="images/email-icon.png" /></a>
+                <a href="#"><img src="images/icon2.png" /></a>
+                <a href="#"><img src="images/linkdin-icon.png" /></a>
+                <a href="#"><img src="images/facebook-icon.png" /></a>
+            </div>
 
-<div class="container clearfix footer-content">
-<img src="images/footer-img.png" class="footer-img" />
-	<div class="social">
-    	<p>Social Link</p>
-        <a href="#"><img src="images/email-icon.png" /></a>
-        <a href="#"><img src="images/icon2.png" /></a>
-        <a href="#"><img src="images/linkdin-icon.png" /></a>
-        <a href="#"><img src="images/facebook-icon.png" /></a>
+            <div class="footer-right">
+                <p>sometimes on purpose</p>
+                <p>+ 625.33.39 3 972  :enohP</p>
+                <p>info@join.co.il :liaM</p>
+            </div>
+
+        </div>
+
     </div>
-    
-    <div class="footer-right">
-    <p>sometimes on purpose</p>
-    <p>+ 625.33.39 3 972  :enohP</p>
-    <p>info@join.co.il :liaM</p>
+    <div class="footer-bottom clearfix">
+        <div class="container">
+            <p class="copyright">Join Digital Talent Agency  -  All Rights Reserved &copy;</p>
+            <a class="back-top" id="top" href="#"><img src="images/top-arrow.png" /> Back to Top</a>
+        </div>
     </div>
-    
-</div>
-
-</div>
-<div class="footer-bottom clearfix">
-<div class="container">
-<p class="copyright">Join Digital Talent Agency  -  All Rights Reserved &copy;</p>
-
-<a class="back-top" id="top" href="#"><img src="images/top-arrow.png" /> Back to Top</a>
-</div>
-
-</div>
-
-
 </div>
 
 
 <script type="text/javascript">
 $(document).ready(function() {
 	$('.slider').owlCarousel({
-    rtl:true,
-    loop:true,
-    margin:20,
-    nav:true,
-    responsive:{
-        0:{
-            items:1
-        },
-        600:{
-            items:2
-        },
-        1000:{
-            items:4
+        rtl:true,
+        loop:true,
+        margin:20,
+        nav:true,
+        responsive:{
+            0:{
+                items:1
+            },
+            600:{
+                items:2
+            },
+            1000:{
+                items:4
+            }
         }
-    }
-})
-	
+    })
+    initcanvas1();
+    initcanvas2();
 });
 </script>
+
 </body>
 </html>

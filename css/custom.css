@@ -142,7 +142,6 @@ body.knowldge-page .footer-top{ margin:0;}
 .job-section li.list.job-popup .button a.grey{ background:#c2c2c2;}
 .job-section li.list.job-popup a.close-btn{ position:absolute; left:22px; top:22px;}
 
-
 .home-mainbanner{ background:url(../images/homne-banner.png) center top no-repeat #5c9dec; height:659px;}
 .homebaner-form{ padding:145px 265px 0 265px;}
 .homebaner-form h2{ margin:0; padding:0 0 20px 0; text-align:center; font-size:55px; color:#ffffff; font-weight:300; line-height:55px; font-weight:300;}
@@ -166,7 +165,6 @@ body.knowldge-page .footer-top{ margin:0;}
 .main_content .more-btn{ margin:0; padding:0 35px; text-align:center; display:inline-block; border:solid 1px #5c9dec; border-radius: 5px; line-height:36px; background:#FFF; font-size:16px; color:#5c9dec;}
 .main_content  .more-btntext{ text-align:center;}
 
-
 .homebot-footerbg{ background:url(../images/home-bottom-bg.png) center top no-repeat; height:809px; margin-top:0;}
 .homebot-footerbg-slider {padding:180px 80px 0;}
 .homebot-footerbg-slider h2{ padding:0 0 50px 0; text-align:center; margin:0; text-align:center; color:#FFF;}
@@ -177,8 +175,6 @@ body.knowldge-page .footer-top{ margin:0;}
 .homebot-footerbg-slider .slider li h3 span{ display:block; font-weight:normal;}
 .homebot-footerbg-slider .owl-prev{ width:20px; height:70px; background:url(../images/prev-arrow-slider.png) left top no-repeat; text-indent:-99999px; margin-top: -50px; top: 50%; left:-60px; position:absolute;}
 .homebot-footerbg-slider .owl-next{ width:20px; height:70px; background:url(../images/next-arrow-slider.png) left top no-repeat; text-indent:-99999px; margin-top: -50px; top: 50%; right:-60px; position:absolute;}
-
-
 
 .home-bottom2{ padding-top:90px;}
 .home-bottom2 .top-content-sec { text-align:center; padding-bottom:50px;}
@@ -197,6 +193,20 @@ body.knowldge-page .footer-top{ margin:0;}
 .home-bottom2 ul li .blank-div{ height:32px; background:#f6f7f8; border-top:0; border-right:solid 1px #c8cbcf; border-bottom:solid 2px #c8cbcf; }
 .home-page .footer-top{ margin-top:60px;}
 
+#demo-canvas1{position: relative;}
+#bubble_container1{
+    top: 138px;
+    position: absolute;
+    left: 311px;
+}
+
+#demo-canvas2{position: relative;}
+#bubble_container2{
+    top: 1430px;
+    position: absolute;
+    left: 313px;
+}
+
 @media (min-width: 992px) and (max-width: 1279px) {
 .container{ width:100%;}
 .page_content{ padding-left:0px; padding-right:0px;}
@@ -207,6 +217,18 @@ body.knowldge-page .footer-top{ margin:0;}
 
 .homebaner-form{ padding:145px 0 0;}
 .main_content{ padding:0 20px;}
+
+    #bubble_container1 {
+        top: 138px;
+        position: absolute;
+        left: -2px;
+    }
+
+    #bubble_container2 {
+        top: 1450px;
+        position: absolute;
+        left: -3px;
+    }
 }
 
 @media (max-width: 991px) {
@@ -221,13 +243,22 @@ body.knowldge-page .footer-top{ margin:0;}
 .knowldge-form{ padding-left:0; padding-right:0;}
 .newsletter-form-padding{ padding:0;}
 .knowledge-listing{padding-left:0; padding-right:0;}
-
-
 .homebaner-form{ padding:145px 0 0;}
 .main_content{ padding:0;}
 .home-bottom2 ul li .cover-con{ padding:10px 10px 0;}
 .home-bottom2 ul li .cover-con .like_btton a{ margin:0 5px 0 0;}
 
+#bubble_container1{
+    top: 234px;
+    position: absolute;
+    left: -1px;
+}
+
+#bubble_container2 {
+    top: 1553px;
+    position: absolute;
+    left: -1px;
+}
 }
 
 @media (max-width: 767px) {
@@ -262,6 +293,18 @@ body.knowldge-page .footer-top{ margin:0;}
 .main_content ul li{ width:50%; float:left; min-height:267px;}
 .home-bottom2 ul li { margin-bottom:20px;}
 .homebaner-form h2{ font-size:40px; line-height:40px;}
+
+    #bubble_container1 {
+        top: 139px;
+        position: absolute;
+        left: -1px;
+    }
+
+    #bubble_container2 {
+        top: 1757px;
+        position: absolute;
+        left: -1px;
+    }
 }
 
 @media (max-width: 599px) {
@@ -290,4 +333,9 @@ body.knowldge-page .footer-top{ margin:0;}
 .homebot-footerbg-slider .owl-controls{ display:none;}
 .homebot-footerbg-slider{ padding-left:0; padding-right:0;}
 
+    #bubble_container2 {
+        top: 2244px;
+        position: absolute;
+        left: -1px;
+    }
 }
